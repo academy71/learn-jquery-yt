@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slider</title>
+    <style>
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="slider">
+    <div class="slides">
+        <img src="images/image1.jpg" alt="Image 1">
+        <img src="images/image2.jpg" alt="Image 2">
+        <img src="images/image3.jpg" alt="Image 3">
+        <img src="images/image4.jpg" alt="Image 4">
+    </div>
+</div>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        const slideCount = $('.slides img').length;
+        let currentSlide = 0;
+
+        function nextSlide() {
+            if (currentSlide + 1 < slideCount) {
+                currentSlide = currentSlide + 1
+            } else {
+                currentSlide = 0
+            }
+
+            const slideWidth = $('.slides img').width();
+            const newPosition = -1 * currentSlide * slideWidth;
+            $('.slides').css('transform', 'translateX(' + newPosition + 'px)');
+        }
+
+        // Auto slide every 2 seconds
+        setInterval(nextSlide, 2000);
+    });
+</script>
+
+</body>
+</html>

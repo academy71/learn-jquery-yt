@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  font-family: "Lato", sans-serif;
+  font-size: 130%;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  padding: 50px;
+  display: block;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+input {
+  font-size: 25px;
+}
+
+div {
+  display: flex;
+  gap: 10px;
+}
+
+select {
+  font-size: 25px;
+  margin: 10px 0 20px 0;
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+}
+
+button {
+  font-size: 25px;
+  margin-top: 20px;
+  padding: 15px 25px;
+}
